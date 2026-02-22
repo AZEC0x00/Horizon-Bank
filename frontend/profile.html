@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | Horizon Bank</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-gray-50 min-h-screen font-sans">
+
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center cursor-pointer"
+                        onclick="window.location.href='dashboard.html'">
+                        <div
+                            class="w-8 h-8 rounded-lg bg-gradient-to-tr from-blue-600 to-indigo-600 text-white flex items-center justify-center mr-2 shadow-md">
+                            <span class="font-bold text-lg">H</span>
+                        </div>
+                        <span class="font-bold text-xl text-gray-900 tracking-tight">Horizon Bank</span>
+                    </div>
+                    <div class="hidden sm:ml-8 sm:flex sm:space-x-8">
+                        <a href="dashboard.html"
+                            class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors">Dashboard</a>
+                        <a href="account.html"
+                            class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors">Accounts</a>
+                        <a href="transfer.html"
+                            class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors">Transfer</a>
+                        <a href="billpay.html"
+                            class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors">Bill
+                            Pay</a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="profile.html"
+                        class="text-blue-600 font-medium px-3 py-2 rounded-md text-sm transition-colors flex items-center bg-blue-50">
+                        Profile
+                    </a>
+                    <button id="logout-btn"
+                        class="text-gray-500 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center">
+                        Logout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 fade-in">
+        <h1 class="text-3xl font-bold text-gray-900 mb-8">Profile & Settings</h1>
+
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden mb-8">
+            <div class="p-8">
+                <h2 class="text-xl font-semibold mb-6">Personal Information</h2>
+
+                <form id="profile-form" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                            <input type="text" id="fullname" class="input-base bg-gray-50 focus:bg-white" disabled>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Username</label>
+                            <input type="text" id="username" class="input-base bg-gray-50 focus:bg-white" disabled>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                            <input type="email" id="email" value="user@horizonbank.demo.local"
+                                class="input-base bg-gray-50 focus:bg-white">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                            <input type="text" id="phone" value="(555) 123-4567"
+                                class="input-base bg-gray-50 focus:bg-white">
+                        </div>
+                    </div>
+                    <div class="pt-4">
+                        <button type="button" onclick="alert('Profile update is disabled in this demo environment.')"
+                            class="btn-primary py-2 px-6 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none transition-colors">
+                            Save Changes
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden mb-8">
+            <div class="p-8">
+                <h2 class="text-xl font-semibold mb-6">Security</h2>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between py-3 border-b border-gray-100">
+                        <div>
+                            <p class="text-sm font-medium text-gray-900">Change Password</p>
+                            <p class="text-sm text-gray-500">Update your account password</p>
+                        </div>
+                        <button onclick="alert('Password change is disabled in demo environment.')"
+                            class="text-blue-600 hover:text-blue-800 text-sm font-medium">Update</button>
+                    </div>
+                    <div class="flex items-center justify-between py-3">
+                        <div>
+                            <p class="text-sm font-medium text-gray-900">Two-Factor Authentication</p>
+                            <p class="text-sm text-gray-500">Add an extra layer of security</p>
+                        </div>
+                        <span
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                            Not Configured
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center pb-10">
+            <button id="logout-main-btn"
+                class="inline-flex items-center px-6 py-3 border border-red-200 text-base font-medium rounded-xl text-red-700 bg-red-50 hover:bg-red-100 focus:outline-none transition-colors shadow-sm">
+                <svg class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                </svg>
+                Sign Out Securely
+            </button>
+        </div>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            if (!utils.checkAuth()) return;
+
+            document.getElementById('logout-btn').addEventListener('click', () => utils.logout());
+            document.getElementById('logout-main-btn').addEventListener('click', () => utils.logout());
+
+            try {
+                const res = await api.getProfile();
+                if (res.ok) {
+                    const profile = await res.json();
+                    document.getElementById('fullname').value = profile.name;
+                    document.getElementById('username').value = profile.username;
+                }
+            } catch (err) {
+                console.error('Failed to load profile details.');
+            }
+        });
+    </script>
+</body>
+
+</html>

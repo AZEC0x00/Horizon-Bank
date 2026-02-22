@@ -1,0 +1,1268 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "standard_user",
+      "password": "horizon123!",
+      "name": "Standard User"
+    },
+    {
+      "id": 2,
+      "username": "locked_out_user",
+      "password": "horizon123!",
+      "name": "Locked User"
+    },
+    {
+      "id": 3,
+      "username": "problem_user",
+      "password": "horizon123!",
+      "name": "Problem User"
+    },
+    {
+      "id": 4,
+      "username": "performance_glitch_user",
+      "password": "horizon123!",
+      "name": "Glitch User"
+    },
+    {
+      "id": 5,
+      "username": "error_user",
+      "password": "horizon123!",
+      "name": "Error User"
+    },
+    {
+      "id": 6,
+      "username": "visual_user",
+      "password": "horizon123!",
+      "name": "Visual User"
+    }
+  ],
+  "accounts": [
+    {
+      "id": 12345,
+      "userId": 1,
+      "type": "Checking Account",
+      "balance": 591.22
+    },
+    {
+      "id": 67890,
+      "userId": 1,
+      "type": "Savings Account",
+      "balance": 8790
+    },
+    {
+      "id": 11122,
+      "userId": 1,
+      "type": "Credit Card",
+      "balance": -104725.56,
+      "limit": 5000
+    },
+    {
+      "id": 10000,
+      "userId": 2,
+      "type": "Checking Account",
+      "balance": 1245.67
+    },
+    {
+      "id": 10001,
+      "userId": 2,
+      "type": "Savings Account",
+      "balance": 8500
+    },
+    {
+      "id": 10002,
+      "userId": 2,
+      "type": "Credit Card",
+      "balance": 15.439999999999998,
+      "limit": 5000
+    },
+    {
+      "id": 10003,
+      "userId": 3,
+      "type": "Checking Account",
+      "balance": 1245.67
+    },
+    {
+      "id": 10004,
+      "userId": 3,
+      "type": "Savings Account",
+      "balance": 8750
+    },
+    {
+      "id": 10005,
+      "userId": 3,
+      "type": "Credit Card",
+      "balance": -234.56,
+      "limit": 5000
+    },
+    {
+      "id": 10006,
+      "userId": 4,
+      "type": "Checking Account",
+      "balance": 1245.67
+    },
+    {
+      "id": 10007,
+      "userId": 4,
+      "type": "Savings Account",
+      "balance": 8490
+    },
+    {
+      "id": 10008,
+      "userId": 4,
+      "type": "Credit Card",
+      "balance": -234.56,
+      "limit": 5000
+    },
+    {
+      "id": 10009,
+      "userId": 5,
+      "type": "Checking Account",
+      "balance": 1245.67
+    },
+    {
+      "id": 10010,
+      "userId": 5,
+      "type": "Savings Account",
+      "balance": 8750
+    },
+    {
+      "id": 10011,
+      "userId": 5,
+      "type": "Credit Card",
+      "balance": -234.56,
+      "limit": 5000
+    },
+    {
+      "id": 10012,
+      "userId": 6,
+      "type": "Checking Account",
+      "balance": 1245.67
+    },
+    {
+      "id": 10013,
+      "userId": 6,
+      "type": "Savings Account",
+      "balance": 8750
+    },
+    {
+      "id": 10014,
+      "userId": 6,
+      "type": "Credit Card",
+      "balance": -234.56,
+      "limit": 5000
+    }
+  ],
+  "transactions": [
+    {
+      "id": 1,
+      "accountId": 12345,
+      "date": "2026-02-21",
+      "description": "Deposit",
+      "amount": 500,
+      "balanceAfter": 1245.67
+    },
+    {
+      "id": 2,
+      "accountId": 12345,
+      "date": "2026-02-19",
+      "description": "Grocery Store",
+      "amount": -120.5,
+      "balanceAfter": 1235.67
+    },
+    {
+      "id": 3,
+      "accountId": 12345,
+      "date": "2026-02-17",
+      "description": "Deposit",
+      "amount": 500,
+      "balanceAfter": 1225.67
+    },
+    {
+      "id": 4,
+      "accountId": 12345,
+      "date": "2026-02-15",
+      "description": "Grocery Store",
+      "amount": -120.5,
+      "balanceAfter": 1215.67
+    },
+    {
+      "id": 5,
+      "accountId": 12345,
+      "date": "2026-02-13",
+      "description": "Deposit",
+      "amount": 500,
+      "balanceAfter": 1205.67
+    },
+    {
+      "id": 6,
+      "accountId": 12345,
+      "date": "2026-02-11",
+      "description": "Grocery Store",
+      "amount": -120.5,
+      "balanceAfter": 1195.67
+    },
+    {
+      "id": 7,
+      "accountId": 12345,
+      "date": "2026-02-09",
+      "description": "Deposit",
+      "amount": 500,
+      "balanceAfter": 1185.67
+    },
+    {
+      "id": 8,
+      "accountId": 67890,
+      "date": "2026-02-21",
+      "description": "Interest Payment",
+      "amount": 45,
+      "balanceAfter": 8750
+    },
+    {
+      "id": 9,
+      "accountId": 67890,
+      "date": "2026-02-16",
+      "description": "Interest Payment",
+      "amount": 45,
+      "balanceAfter": 8740
+    },
+    {
+      "id": 10,
+      "accountId": 67890,
+      "date": "2026-02-11",
+      "description": "Interest Payment",
+      "amount": 45,
+      "balanceAfter": 8730
+    },
+    {
+      "id": 11,
+      "accountId": 67890,
+      "date": "2026-02-06",
+      "description": "Interest Payment",
+      "amount": 45,
+      "balanceAfter": 8720
+    },
+    {
+      "id": 12,
+      "accountId": 67890,
+      "date": "2026-02-01",
+      "description": "Interest Payment",
+      "amount": 45,
+      "balanceAfter": 8710
+    },
+    {
+      "id": 13,
+      "accountId": 11122,
+      "date": "2026-02-21",
+      "description": "Online Shopping",
+      "amount": -54.99,
+      "balanceAfter": -234.56
+    },
+    {
+      "id": 14,
+      "accountId": 11122,
+      "date": "2026-02-18",
+      "description": "Online Shopping",
+      "amount": -54.99,
+      "balanceAfter": -224.56
+    },
+    {
+      "id": 15,
+      "accountId": 11122,
+      "date": "2026-02-15",
+      "description": "Online Shopping",
+      "amount": -54.99,
+      "balanceAfter": -214.56
+    },
+    {
+      "id": 16,
+      "accountId": 11122,
+      "date": "2026-02-12",
+      "description": "Online Shopping",
+      "amount": -54.99,
+      "balanceAfter": -204.56
+    },
+    {
+      "id": 17,
+      "accountId": 11122,
+      "date": "2026-02-09",
+      "description": "Online Shopping",
+      "amount": -54.99,
+      "balanceAfter": -194.56
+    },
+    {
+      "id": 18,
+      "accountId": 10000,
+      "date": "2026-02-21",
+      "description": "Deposit",
+      "amount": 500,
+      "balanceAfter": 1245.67
+    },
+    {
+      "id": 19,
+      "accountId": 10000,
+      "date": "2026-02-19",
+      "description": "Grocery Store",
+      "amount": -120.5,
+      "balanceAfter": 1235.67
+    },
+    {
+      "id": 20,
+      "accountId": 10000,
+      "date": "2026-02-17",
+      "description": "Deposit",
+      "amount": 500,
+      "balanceAfter": 1225.67
+    },
+    {
+      "id": 21,
+      "accountId": 10000,
+      "date": "2026-02-15",
+      "description": "Grocery Store",
+      "amount": -120.5,
+      "balanceAfter": 1215.67
+    },
+    {
+      "id": 22,
+      "accountId": 10000,
+      "date": "2026-02-13",
+      "description": "Deposit",
+      "amount": 500,
+      "balanceAfter": 1205.67
+    },
+    {
+      "id": 23,
+      "accountId": 10000,
+      "date": "2026-02-11",
+      "description": "Grocery Store",
+      "amount": -120.5,
+      "balanceAfter": 1195.67
+    },
+    {
+      "id": 24,
+      "accountId": 10000,
+      "date": "2026-02-09",
+      "description": "Deposit",
+      "amount": 500,
+      "balanceAfter": 1185.67
+    },
+    {
+      "id": 25,
+      "accountId": 10001,
+      "date": "2026-02-21",
+      "description": "Interest Payment",
+      "amount": 45,
+      "balanceAfter": 8750
+    },
+    {
+      "id": 26,
+      "accountId": 10001,
+      "date": "2026-02-16",
+      "description": "Interest Payment",
+      "amount": 45,
+      "balanceAfter": 8740
+    },
+    {
+      "id": 27,
+      "accountId": 10001,
+      "date": "2026-02-11",
+      "description": "Interest Payment",
+      "amount": 45,
+      "balanceAfter": 8730
+    },
+    {
+      "id": 28,
+      "accountId": 10001,
+      "date": "2026-02-06",
+      "description": "Interest Payment",
+      "amount": 45,
+      "balanceAfter": 8720
+    },
+    {
+      "id": 29,
+      "accountId": 10001,
+      "date": "2026-02-01",
+      "description": "Interest Payment",
+      "amount": 45,
+      "balanceAfter": 8710
+    },
+    {
+      "id": 30,
+      "accountId": 10002,
+      "date": "2026-02-21",
+      "description": "Online Shopping",
+      "amount": -54.99,
+      "balanceAfter": -234.56
+    },
+    {
+      "id": 31,
+      "accountId": 10002,
+      "date": "2026-02-18",
+      "description": "Online Shopping",
+      "amount": -54.99,
+      "balanceAfter": -224.56
+    },
+    {
+      "id": 32,
+      "accountId": 10002,
+      "date": "2026-02-15",
+      "description": "Online Shopping",
+      "amount": -54.99,
+      "balanceAfter": -214.56
+    },
+    {
+      "id": 33,
+      "accountId": 10002,
+      "date": "2026-02-12",
+      "description": "Online Shopping",
+      "amount": -54.99,
+      "balanceAfter": -204.56
+    },
+    {
+      "id": 34,
+      "accountId": 10002,
+      "date": "2026-02-09",
+      "description": "Online Shopping",
+      "amount": -54.99,
+      "balanceAfter": -194.56
+    },
+    {
+      "id": 35,
+      "accountId": 10003,
+      "date": "2026-02-21",
+      "description": "Deposit",
+      "amount": 500,
+      "balanceAfter": 1245.67
+    },
+    {
+      "id": 36,
+      "accountId": 10003,
+      "date": "2026-02-19",
+      "description": "Grocery Store",
+      "amount": -120.5,
+      "balanceAfter": 1235.67
+    },
+    {
+      "id": 37,
+      "accountId": 10003,
+      "date": "2026-02-17",
+      "description": "Deposit",
+      "amount": 500,
+      "balanceAfter": 1225.67
+    },
+    {
+      "id": 38,
+      "accountId": 10003,
+      "date": "2026-02-15",
+      "description": "Grocery Store",
+      "amount": -120.5,
+      "balanceAfter": 1215.67
+    },
+    {
+      "id": 39,
+      "accountId": 10003,
+      "date": "2026-02-13",
+      "description": "Deposit",
+      "amount": 500,
+      "balanceAfter": 1205.67
+    },
+    {
+      "id": 40,
+      "accountId": 10003,
+      "date": "2026-02-11",
+      "description": "Grocery Store",
+      "amount": -120.5,
+      "balanceAfter": 1195.67
+    },
+    {
+      "id": 41,
+      "accountId": 10003,
+      "date": "2026-02-09",
+      "description": "Deposit",
+      "amount": 500,
+      "balanceAfter": 1185.67
+    },
+    {
+      "id": 42,
+      "accountId": 10004,
+      "date": "2026-02-21",
+      "description": "Interest Payment",
+      "amount": 45,
+      "balanceAfter": 8750
+    },
+    {
+      "id": 43,
+      "accountId": 10004,
+      "date": "2026-02-16",
+      "description": "Interest Payment",
+      "amount": 45,
+      "balanceAfter": 8740
+    },
+    {
+      "id": 44,
+      "accountId": 10004,
+      "date": "2026-02-11",
+      "description": "Interest Payment",
+      "amount": 45,
+      "balanceAfter": 8730
+    },
+    {
+      "id": 45,
+      "accountId": 10004,
+      "date": "2026-02-06",
+      "description": "Interest Payment",
+      "amount": 45,
+      "balanceAfter": 8720
+    },
+    {
+      "id": 46,
+      "accountId": 10004,
+      "date": "2026-02-01",
+      "description": "Interest Payment",
+      "amount": 45,
+      "balanceAfter": 8710
+    },
+    {
+      "id": 47,
+      "accountId": 10005,
+      "date": "2026-02-21",
+      "description": "Online Shopping",
+      "amount": -54.99,
+      "balanceAfter": -234.56
+    },
+    {
+      "id": 48,
+      "accountId": 10005,
+      "date": "2026-02-18",
+      "description": "Online Shopping",
+      "amount": -54.99,
+      "balanceAfter": -224.56
+    },
+    {
+      "id": 49,
+      "accountId": 10005,
+      "date": "2026-02-15",
+      "description": "Online Shopping",
+      "amount": -54.99,
+      "balanceAfter": -214.56
+    },
+    {
+      "id": 50,
+      "accountId": 10005,
+      "date": "2026-02-12",
+      "description": "Online Shopping",
+      "amount": -54.99,
+      "balanceAfter": -204.56
+    },
+    {
+      "id": 51,
+      "accountId": 10005,
+      "date": "2026-02-09",
+      "description": "Online Shopping",
+      "amount": -54.99,
+      "balanceAfter": -194.56
+    },
+    {
+      "id": 52,
+      "accountId": 10006,
+      "date": "2026-02-21",
+      "description": "Deposit",
+      "amount": 500,
+      "balanceAfter": 1245.67
+    },
+    {
+      "id": 53,
+      "accountId": 10006,
+      "date": "2026-02-19",
+      "description": "Grocery Store",
+      "amount": -120.5,
+      "balanceAfter": 1235.67
+    },
+    {
+      "id": 54,
+      "accountId": 10006,
+      "date": "2026-02-17",
+      "description": "Deposit",
+      "amount": 500,
+      "balanceAfter": 1225.67
+    },
+    {
+      "id": 55,
+      "accountId": 10006,
+      "date": "2026-02-15",
+      "description": "Grocery Store",
+      "amount": -120.5,
+      "balanceAfter": 1215.67
+    },
+    {
+      "id": 56,
+      "accountId": 10006,
+      "date": "2026-02-13",
+      "description": "Deposit",
+      "amount": 500,
+      "balanceAfter": 1205.67
+    },
+    {
+      "id": 57,
+      "accountId": 10006,
+      "date": "2026-02-11",
+      "description": "Grocery Store",
+      "amount": -120.5,
+      "balanceAfter": 1195.67
+    },
+    {
+      "id": 58,
+      "accountId": 10006,
+      "date": "2026-02-09",
+      "description": "Deposit",
+      "amount": 500,
+      "balanceAfter": 1185.67
+    },
+    {
+      "id": 59,
+      "accountId": 10007,
+      "date": "2026-02-21",
+      "description": "Interest Payment",
+      "amount": 45,
+      "balanceAfter": 8750
+    },
+    {
+      "id": 60,
+      "accountId": 10007,
+      "date": "2026-02-16",
+      "description": "Interest Payment",
+      "amount": 45,
+      "balanceAfter": 8740
+    },
+    {
+      "id": 61,
+      "accountId": 10007,
+      "date": "2026-02-11",
+      "description": "Interest Payment",
+      "amount": 45,
+      "balanceAfter": 8730
+    },
+    {
+      "id": 62,
+      "accountId": 10007,
+      "date": "2026-02-06",
+      "description": "Interest Payment",
+      "amount": 45,
+      "balanceAfter": 8720
+    },
+    {
+      "id": 63,
+      "accountId": 10007,
+      "date": "2026-02-01",
+      "description": "Interest Payment",
+      "amount": 45,
+      "balanceAfter": 8710
+    },
+    {
+      "id": 64,
+      "accountId": 10008,
+      "date": "2026-02-21",
+      "description": "Online Shopping",
+      "amount": -54.99,
+      "balanceAfter": -234.56
+    },
+    {
+      "id": 65,
+      "accountId": 10008,
+      "date": "2026-02-18",
+      "description": "Online Shopping",
+      "amount": -54.99,
+      "balanceAfter": -224.56
+    },
+    {
+      "id": 66,
+      "accountId": 10008,
+      "date": "2026-02-15",
+      "description": "Online Shopping",
+      "amount": -54.99,
+      "balanceAfter": -214.56
+    },
+    {
+      "id": 67,
+      "accountId": 10008,
+      "date": "2026-02-12",
+      "description": "Online Shopping",
+      "amount": -54.99,
+      "balanceAfter": -204.56
+    },
+    {
+      "id": 68,
+      "accountId": 10008,
+      "date": "2026-02-09",
+      "description": "Online Shopping",
+      "amount": -54.99,
+      "balanceAfter": -194.56
+    },
+    {
+      "id": 69,
+      "accountId": 10009,
+      "date": "2026-02-21",
+      "description": "Deposit",
+      "amount": 500,
+      "balanceAfter": 1245.67
+    },
+    {
+      "id": 70,
+      "accountId": 10009,
+      "date": "2026-02-19",
+      "description": "Grocery Store",
+      "amount": -120.5,
+      "balanceAfter": 1235.67
+    },
+    {
+      "id": 71,
+      "accountId": 10009,
+      "date": "2026-02-17",
+      "description": "Deposit",
+      "amount": 500,
+      "balanceAfter": 1225.67
+    },
+    {
+      "id": 72,
+      "accountId": 10009,
+      "date": "2026-02-15",
+      "description": "Grocery Store",
+      "amount": -120.5,
+      "balanceAfter": 1215.67
+    },
+    {
+      "id": 73,
+      "accountId": 10009,
+      "date": "2026-02-13",
+      "description": "Deposit",
+      "amount": 500,
+      "balanceAfter": 1205.67
+    },
+    {
+      "id": 74,
+      "accountId": 10009,
+      "date": "2026-02-11",
+      "description": "Grocery Store",
+      "amount": -120.5,
+      "balanceAfter": 1195.67
+    },
+    {
+      "id": 75,
+      "accountId": 10009,
+      "date": "2026-02-09",
+      "description": "Deposit",
+      "amount": 500,
+      "balanceAfter": 1185.67
+    },
+    {
+      "id": 76,
+      "accountId": 10010,
+      "date": "2026-02-21",
+      "description": "Interest Payment",
+      "amount": 45,
+      "balanceAfter": 8750
+    },
+    {
+      "id": 77,
+      "accountId": 10010,
+      "date": "2026-02-16",
+      "description": "Interest Payment",
+      "amount": 45,
+      "balanceAfter": 8740
+    },
+    {
+      "id": 78,
+      "accountId": 10010,
+      "date": "2026-02-11",
+      "description": "Interest Payment",
+      "amount": 45,
+      "balanceAfter": 8730
+    },
+    {
+      "id": 79,
+      "accountId": 10010,
+      "date": "2026-02-06",
+      "description": "Interest Payment",
+      "amount": 45,
+      "balanceAfter": 8720
+    },
+    {
+      "id": 80,
+      "accountId": 10010,
+      "date": "2026-02-01",
+      "description": "Interest Payment",
+      "amount": 45,
+      "balanceAfter": 8710
+    },
+    {
+      "id": 81,
+      "accountId": 10011,
+      "date": "2026-02-21",
+      "description": "Online Shopping",
+      "amount": -54.99,
+      "balanceAfter": -234.56
+    },
+    {
+      "id": 82,
+      "accountId": 10011,
+      "date": "2026-02-18",
+      "description": "Online Shopping",
+      "amount": -54.99,
+      "balanceAfter": -224.56
+    },
+    {
+      "id": 83,
+      "accountId": 10011,
+      "date": "2026-02-15",
+      "description": "Online Shopping",
+      "amount": -54.99,
+      "balanceAfter": -214.56
+    },
+    {
+      "id": 84,
+      "accountId": 10011,
+      "date": "2026-02-12",
+      "description": "Online Shopping",
+      "amount": -54.99,
+      "balanceAfter": -204.56
+    },
+    {
+      "id": 85,
+      "accountId": 10011,
+      "date": "2026-02-09",
+      "description": "Online Shopping",
+      "amount": -54.99,
+      "balanceAfter": -194.56
+    },
+    {
+      "id": 86,
+      "accountId": 10012,
+      "date": "2026-02-21",
+      "description": "Deposit",
+      "amount": 500,
+      "balanceAfter": 1245.67
+    },
+    {
+      "id": 87,
+      "accountId": 10012,
+      "date": "2026-02-19",
+      "description": "Grocery Store",
+      "amount": -120.5,
+      "balanceAfter": 1235.67
+    },
+    {
+      "id": 88,
+      "accountId": 10012,
+      "date": "2026-02-17",
+      "description": "Deposit",
+      "amount": 500,
+      "balanceAfter": 1225.67
+    },
+    {
+      "id": 89,
+      "accountId": 10012,
+      "date": "2026-02-15",
+      "description": "Grocery Store",
+      "amount": -120.5,
+      "balanceAfter": 1215.67
+    },
+    {
+      "id": 90,
+      "accountId": 10012,
+      "date": "2026-02-13",
+      "description": "Deposit",
+      "amount": 500,
+      "balanceAfter": 1205.67
+    },
+    {
+      "id": 91,
+      "accountId": 10012,
+      "date": "2026-02-11",
+      "description": "Grocery Store",
+      "amount": -120.5,
+      "balanceAfter": 1195.67
+    },
+    {
+      "id": 92,
+      "accountId": 10012,
+      "date": "2026-02-09",
+      "description": "Deposit",
+      "amount": 500,
+      "balanceAfter": 1185.67
+    },
+    {
+      "id": 93,
+      "accountId": 10013,
+      "date": "2026-02-21",
+      "description": "Interest Payment",
+      "amount": 45,
+      "balanceAfter": 8750
+    },
+    {
+      "id": 94,
+      "accountId": 10013,
+      "date": "2026-02-16",
+      "description": "Interest Payment",
+      "amount": 45,
+      "balanceAfter": 8740
+    },
+    {
+      "id": 95,
+      "accountId": 10013,
+      "date": "2026-02-11",
+      "description": "Interest Payment",
+      "amount": 45,
+      "balanceAfter": 8730
+    },
+    {
+      "id": 96,
+      "accountId": 10013,
+      "date": "2026-02-06",
+      "description": "Interest Payment",
+      "amount": 45,
+      "balanceAfter": 8720
+    },
+    {
+      "id": 97,
+      "accountId": 10013,
+      "date": "2026-02-01",
+      "description": "Interest Payment",
+      "amount": 45,
+      "balanceAfter": 8710
+    },
+    {
+      "id": 98,
+      "accountId": 10014,
+      "date": "2026-02-21",
+      "description": "Online Shopping",
+      "amount": -54.99,
+      "balanceAfter": -234.56
+    },
+    {
+      "id": 99,
+      "accountId": 10014,
+      "date": "2026-02-18",
+      "description": "Online Shopping",
+      "amount": -54.99,
+      "balanceAfter": -224.56
+    },
+    {
+      "id": 100,
+      "accountId": 10014,
+      "date": "2026-02-15",
+      "description": "Online Shopping",
+      "amount": -54.99,
+      "balanceAfter": -214.56
+    },
+    {
+      "id": 101,
+      "accountId": 10014,
+      "date": "2026-02-12",
+      "description": "Online Shopping",
+      "amount": -54.99,
+      "balanceAfter": -204.56
+    },
+    {
+      "id": 102,
+      "accountId": 10014,
+      "date": "2026-02-09",
+      "description": "Online Shopping",
+      "amount": -54.99,
+      "balanceAfter": -194.56
+    },
+    {
+      "id": 1771784870746,
+      "accountId": 67890,
+      "date": "2026-02-22",
+      "description": "Transfer to 11122",
+      "amount": -10,
+      "balanceAfter": 8730
+    },
+    {
+      "id": 1771784964289,
+      "accountId": 12345,
+      "date": "2026-02-22",
+      "description": "Transfer to 11122",
+      "amount": -399,
+      "balanceAfter": 447.6700000000001
+    },
+    {
+      "id": 1771784998528,
+      "accountId": 12345,
+      "date": "2026-02-22",
+      "description": "Transfer to 11122",
+      "amount": -100,
+      "balanceAfter": 646.6700000000001
+    },
+    {
+      "id": 1771785708488,
+      "accountId": 12345,
+      "date": "2026-02-22",
+      "description": "API Standard Transfer",
+      "amount": -50,
+      "balanceAfter": 646.6700000000001
+    },
+    {
+      "id": 1771785724776,
+      "accountId": 10001,
+      "date": "2026-02-22",
+      "description": "Bugged logic transfer",
+      "amount": -250,
+      "balanceAfter": 8250
+    },
+    {
+      "id": 1771785750160,
+      "accountId": 12345,
+      "date": "2026-10-15",
+      "description": "Bill Payment: Electricity",
+      "amount": -55.45,
+      "balanceAfter": 585.77
+    },
+    {
+      "id": 1771785765045,
+      "accountId": 10007,
+      "date": "2026-10-15",
+      "description": "Bill Payment: Internet",
+      "amount": -10,
+      "balanceAfter": 8730
+    },
+    {
+      "id": 1771785771136,
+      "accountId": 10007,
+      "date": "2026-10-15",
+      "description": "Bill Payment: Internet",
+      "amount": -10,
+      "balanceAfter": 8720
+    },
+    {
+      "id": 1771785771969,
+      "accountId": 10007,
+      "date": "2026-10-15",
+      "description": "Bill Payment: Internet",
+      "amount": -10,
+      "balanceAfter": 8710
+    },
+    {
+      "id": 1771785772774,
+      "accountId": 10007,
+      "date": "2026-10-15",
+      "description": "Bill Payment: Internet",
+      "amount": -10,
+      "balanceAfter": 8700
+    },
+    {
+      "id": 1771785774347,
+      "accountId": 10007,
+      "date": "2026-10-15",
+      "description": "Bill Payment: Internet",
+      "amount": -10,
+      "balanceAfter": 8690
+    },
+    {
+      "id": 1771785775716,
+      "accountId": 10007,
+      "date": "2026-10-15",
+      "description": "Bill Payment: Internet",
+      "amount": -10,
+      "balanceAfter": 8680
+    },
+    {
+      "id": 1771785776683,
+      "accountId": 10007,
+      "date": "2026-10-15",
+      "description": "Bill Payment: Internet",
+      "amount": -10,
+      "balanceAfter": 8670
+    },
+    {
+      "id": 1771785777475,
+      "accountId": 10007,
+      "date": "2026-10-15",
+      "description": "Bill Payment: Internet",
+      "amount": -10,
+      "balanceAfter": 8660
+    },
+    {
+      "id": 1771785779836,
+      "accountId": 10007,
+      "date": "2026-10-15",
+      "description": "Bill Payment: Internet",
+      "amount": -10,
+      "balanceAfter": 8650
+    },
+    {
+      "id": 1771785780601,
+      "accountId": 10007,
+      "date": "2026-10-15",
+      "description": "Bill Payment: Internet",
+      "amount": -10,
+      "balanceAfter": 8640
+    },
+    {
+      "id": 1771785781299,
+      "accountId": 10007,
+      "date": "2026-10-15",
+      "description": "Bill Payment: Internet",
+      "amount": -10,
+      "balanceAfter": 8630
+    },
+    {
+      "id": 1771785782150,
+      "accountId": 10007,
+      "date": "2026-10-15",
+      "description": "Bill Payment: Internet",
+      "amount": -10,
+      "balanceAfter": 8620
+    },
+    {
+      "id": 1771785782993,
+      "accountId": 10007,
+      "date": "2026-10-15",
+      "description": "Bill Payment: Internet",
+      "amount": -10,
+      "balanceAfter": 8610
+    },
+    {
+      "id": 1771785783677,
+      "accountId": 10007,
+      "date": "2026-10-15",
+      "description": "Bill Payment: Internet",
+      "amount": -10,
+      "balanceAfter": 8600
+    },
+    {
+      "id": 1771785784340,
+      "accountId": 10007,
+      "date": "2026-10-15",
+      "description": "Bill Payment: Internet",
+      "amount": -10,
+      "balanceAfter": 8590
+    },
+    {
+      "id": 1771785785194,
+      "accountId": 10007,
+      "date": "2026-10-15",
+      "description": "Bill Payment: Internet",
+      "amount": -10,
+      "balanceAfter": 8580
+    },
+    {
+      "id": 1771785786006,
+      "accountId": 10007,
+      "date": "2026-10-15",
+      "description": "Bill Payment: Internet",
+      "amount": -10,
+      "balanceAfter": 8570
+    },
+    {
+      "id": 1771785786740,
+      "accountId": 10007,
+      "date": "2026-10-15",
+      "description": "Bill Payment: Internet",
+      "amount": -10,
+      "balanceAfter": 8560
+    },
+    {
+      "id": 1771785789567,
+      "accountId": 10007,
+      "date": "2026-10-15",
+      "description": "Bill Payment: Internet",
+      "amount": -10,
+      "balanceAfter": 8550
+    },
+    {
+      "id": 1771785790854,
+      "accountId": 10007,
+      "date": "2026-10-15",
+      "description": "Bill Payment: Internet",
+      "amount": -10,
+      "balanceAfter": 8540
+    },
+    {
+      "id": 1771785810709,
+      "accountId": 10007,
+      "date": "2026-10-15",
+      "description": "Bill Payment: Internet",
+      "amount": -10,
+      "balanceAfter": 8530
+    },
+    {
+      "id": 1771785812244,
+      "accountId": 10007,
+      "date": "2026-10-15",
+      "description": "Bill Payment: Internet",
+      "amount": -10,
+      "balanceAfter": 8520
+    },
+    {
+      "id": 1771785813663,
+      "accountId": 10007,
+      "date": "2026-10-15",
+      "description": "Bill Payment: Internet",
+      "amount": -10,
+      "balanceAfter": 8510
+    },
+    {
+      "id": 1771785819190,
+      "accountId": 10007,
+      "date": "2026-10-15",
+      "description": "Bill Payment: Internet",
+      "amount": -10,
+      "balanceAfter": 8500
+    },
+    {
+      "id": 1771785820278,
+      "accountId": 10007,
+      "date": "2026-10-15",
+      "description": "Bill Payment: Internet",
+      "amount": -10,
+      "balanceAfter": 8490
+    },
+    {
+      "id": 1771785827327,
+      "accountId": 10007,
+      "date": "2026-10-15",
+      "description": "Bill Payment: Internet",
+      "amount": -10,
+      "balanceAfter": 8480
+    },
+    {
+      "id": 1771785846793,
+      "accountId": 11122,
+      "date": "2026-10-15",
+      "description": "Bill Payment: Rent",
+      "amount": -105000,
+      "balanceAfter": -209725.56
+    },
+    {
+      "id": 1771785886665,
+      "accountId": 12345,
+      "date": "2026-10-15",
+      "description": "Bill Payment: Unknown Payee",
+      "amount": -50,
+      "balanceAfter": 541.22
+    }
+  ],
+  "payees": [
+    {
+      "id": 1,
+      "name": "Electricity"
+    },
+    {
+      "id": 2,
+      "name": "Internet"
+    },
+    {
+      "id": 3,
+      "name": "Rent"
+    },
+    {
+      "id": 4,
+      "name": "Phone"
+    },
+    {
+      "id": 5,
+      "name": "Water"
+    }
+  ]
+}

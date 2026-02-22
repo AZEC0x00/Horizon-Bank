@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Horizon Bank</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-gray-50 min-h-screen font-sans">
+
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center cursor-pointer"
+                        onclick="window.location.href='dashboard.html'">
+                        <div
+                            class="w-8 h-8 rounded-lg bg-gradient-to-tr from-blue-600 to-indigo-600 text-white flex items-center justify-center mr-2 shadow-md">
+                            <svg xmlns="http://www.w3.org/-2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                                </path>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                            </svg>
+                        </div>
+                        <span class="font-bold text-xl text-gray-900 tracking-tight">Horizon Bank</span>
+                    </div>
+                    <div class="hidden sm:ml-8 sm:flex sm:space-x-8">
+                        <a href="dashboard.html"
+                            class="border-blue-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Dashboard</a>
+                        <a href="account.html"
+                            class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors">Accounts</a>
+                        <a href="transfer.html"
+                            class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors">Transfer</a>
+                        <a href="billpay.html"
+                            class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors">Bill
+                            Pay</a>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <button id="logout-btn"
+                        class="text-gray-500 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center">
+                        <svg class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                        </svg>
+                        Logout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 fade-in">
+        <!-- Greeting -->
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-900" id="greeting">Welcome, User!</h1>
+            <p class="text-sm text-gray-500 mt-1">Here is a summary of your accounts.</p>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+            <button onclick="window.location.href='transfer.html'"
+                class="card-hover bg-white p-4 rounded-xl border border-gray-200 shadow-sm flex flex-col items-center justify-center text-center text-blue-600 hover:bg-blue-50 transition-colors">
+                <svg class="h-8 w-8 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                </svg>
+                <span class="text-sm font-semibold">New Transfer</span>
+            </button>
+            <button onclick="window.location.href='billpay.html'"
+                class="card-hover bg-white p-4 rounded-xl border border-gray-200 shadow-sm flex flex-col items-center justify-center text-center text-indigo-600 hover:bg-indigo-50 transition-colors">
+                <svg class="h-8 w-8 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                </svg>
+                <span class="text-sm font-semibold">Pay Bills</span>
+            </button>
+            <button onclick="alert('Demo generic action. Not fully implemented.')"
+                class="card-hover bg-white p-4 rounded-xl border border-gray-200 shadow-sm flex flex-col items-center justify-center text-center text-green-600 hover:bg-green-50 transition-colors">
+                <svg class="h-8 w-8 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                </svg>
+                <span class="text-sm font-semibold">Open Account</span>
+            </button>
+            <button onclick="window.location.href='account.html'"
+                class="card-hover bg-white p-4 rounded-xl border border-gray-200 shadow-sm flex flex-col items-center justify-center text-center text-purple-600 hover:bg-purple-50 transition-colors">
+                <svg class="h-8 w-8 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                </svg>
+                <span class="text-sm font-semibold">Transactions</span>
+            </button>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Accounts List -->
+            <div class="lg:col-span-2 space-y-4">
+                <h2 class="text-xl font-semibold text-gray-800 border-b pb-2">Your Accounts</h2>
+                <div id="accounts-container" class="space-y-4">
+                    <!-- Skeletons inline for better UX -->
+                    <div class="animate-pulse bg-white p-6 rounded-2xl border border-gray-200 shadow-sm">
+                        <div class="h-4 bg-gray-200 rounded w-1/4 mb-4"></div>
+                        <div class="h-8 bg-gray-200 rounded w-1/3"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Transactions Mini Widget -->
+            <div class="space-y-4">
+                <h2 class="text-xl font-semibold text-gray-800 border-b pb-2">Recent Transactions</h2>
+                <div class="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+                    <ul id="recent-transactions" class="divide-y divide-gray-100">
+                        <!-- Skeletons -->
+                        <li class="p-4 animate-pulse flex justify-between">
+                            <div class="h-4 bg-gray-200 rounded w-1/2"></div>
+                            <div class="h-4 bg-gray-200 rounded w-1/4"></div>
+                        </li>
+                    </ul>
+                    <div class="p-3 bg-gray-50 text-center border-t border-gray-100 hidden" id="view-all-tx-btn">
+                        <a href="account.html" class="text-sm font-medium text-blue-600 hover:text-blue-800">View
+                            All</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            if (!utils.checkAuth()) return;
+
+            const user = JSON.parse(localStorage.getItem('user'));
+            document.getElementById('greeting').textContent = `Welcome, ${user.name}!`;
+
+            document.getElementById('logout-btn').addEventListener('click', () => {
+                utils.logout();
+            });
+
+            const accountsContainer = document.getElementById('accounts-container');
+            const recentTxContainer = document.getElementById('recent-transactions');
+
+            try {
+                // Load accounts
+                const res = await api.getAccounts();
+                if (res.ok) {
+                    let accounts = await res.json();
+
+                    // Ошибка 7: Значок баланса на панели управления не обновляется сразу после успешного перевода.
+                    // Реализация: Если существует кэшированный набор учетных записей и установлен флаг 'staleDashboard',
+                    //мы намеренно отображаем старые балансы.
+                    if (localStorage.getItem('staleDashboard') === 'true' && localStorage.getItem('cachedAccounts')) {
+                        accounts = JSON.parse(localStorage.getItem('cachedAccounts'));
+                        // remove it so next refresh fixes it
+                        localStorage.removeItem('staleDashboard');
+                    } else {
+                        localStorage.setItem('cachedAccounts', JSON.stringify(accounts));
+                    }
+
+                    accountsContainer.innerHTML = '';
+                    accounts.forEach(acc => {
+                        const isNegative = acc.balance < 0;
+                        const balanceColor = isNegative ? 'text-red-600' : 'text-gray-900';
+                        const iconBg = acc.type === 'Credit Card' ? 'bg-orange-100 text-orange-600' :
+                            (acc.type === 'Savings Account' ? 'bg-green-100 text-green-600' : 'bg-blue-100 text-blue-600');
+
+                        const iconPaths = acc.type === 'Credit Card'
+                            ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />'
+                            : '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />';
+
+                        accountsContainer.innerHTML += `
+              <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm flex items-center justify-between card-hover cursor-pointer" onclick="window.location.href='account.html?id=${acc.id}'">
+                <div class="flex items-center">
+                  <div class="w-12 h-12 rounded-full ${iconBg} flex items-center justify-center mr-4">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      ${iconPaths}
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-sm font-medium text-gray-500">${acc.type}</h3>
+                    <p class="text-xs text-gray-400">Account: ${acc.id}</p>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <p class="text-2xl font-bold ${balanceColor}">${utils.formatCurrency(acc.balance)}</p>
+                  ${acc.limit ? `<p class="text-xs text-gray-400">Limit: ${utils.formatCurrency(acc.limit)}</p>` : ''}
+                </div>
+              </div>
+            `;
+                    });
+                }
+
+                // Load recent transactions
+                const txRes = await api.getTransactions();
+                if (txRes.ok) {
+                    const transactions = await txRes.json();
+                    // Sort by date/id descending
+                    transactions.sort((a, b) => b.id - a.id);
+                    const recent = transactions.slice(0, 5);
+
+                    recentTxContainer.innerHTML = '';
+                    if (recent.length === 0) {
+                        recentTxContainer.innerHTML = '<li class="p-4 text-sm text-gray-500 text-center">No recent transactions</li>';
+                    } else {
+                        recent.forEach(tx => {
+                            const isDeposit = tx.amount > 0;
+                            const color = isDeposit ? 'text-green-600' : 'text-gray-900';
+                            const prefix = isDeposit ? '+' : '';
+
+                            recentTxContainer.innerHTML += `
+                <li class="p-4 flex items-center justify-between hover:bg-gray-50 transition-colors">
+                  <div>
+                    <p class="text-sm font-medium text-gray-800">${tx.description}</p>
+                    <p class="text-xs text-gray-400">${utils.formatDate(tx.date)} &bull; ${tx.accountId}</p>
+                  </div>
+                  <div class="text-right">
+                    <p class="text-sm font-semibold ${color}">${prefix}${utils.formatCurrency(tx.amount)}</p>
+                  </div>
+                </li>
+              `;
+                        });
+                        document.getElementById('view-all-tx-btn').classList.remove('hidden');
+                    }
+                }
+            } catch (err) {
+                console.error(err);
+                utils.showToast('Error loading dashboard data', 'error');
+            }
+        });
+    </script>
+</body>
+
+</html>

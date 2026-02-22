@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Pay | Horizon Bank</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-gray-50 min-h-screen font-sans">
+
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center cursor-pointer"
+                        onclick="window.location.href='dashboard.html'">
+                        <div
+                            class="w-8 h-8 rounded-lg bg-gradient-to-tr from-blue-600 to-indigo-600 text-white flex items-center justify-center mr-2 shadow-md">
+                            <span class="font-bold text-lg">H</span>
+                        </div>
+                        <span class="font-bold text-xl text-gray-900 tracking-tight">Horizon Bank</span>
+                    </div>
+                    <div class="hidden sm:ml-8 sm:flex sm:space-x-8">
+                        <a href="dashboard.html"
+                            class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors">Dashboard</a>
+                        <a href="account.html"
+                            class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors">Accounts</a>
+                        <a href="transfer.html"
+                            class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors">Transfer</a>
+                        <a href="billpay.html"
+                            class="border-blue-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Bill
+                            Pay</a>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <button id="logout-btn"
+                        class="text-gray-500 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center">
+                        Logout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 fade-in">
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+            <div class="bg-gradient-to-r from-blue-600 to-indigo-700 px-8 py-6 text-white text-center">
+                <h1 class="text-2xl font-bold">Pay Bills</h1>
+                <p class="text-blue-100 text-sm mt-1">Settle your utilities and expenses in a click</p>
+            </div>
+
+            <div class="p-8">
+                <form id="billpay-form" class="space-y-6">
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Payee Selector -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Payee</label>
+                            <!-- Defect 11: on mobile devices, Payee field is truncated -->
+                            <select id="payee" required
+                                class="input-base bg-gray-50 focus:bg-white defect-truncate-mobile">
+                                <option value="" disabled selected>Select a Payee</option>
+                                <option value="1">Electricity</option>
+                                <option value="2">Internet</option>
+                                <option value="3">Rent</option>
+                                <option value="4">Phone</option>
+                                <option value="5">Water</option>
+                            </select>
+                        </div>
+
+                        <!-- From Account -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Pay From Account</label>
+                            <select id="from-account" required class="input-base bg-gray-50 focus:bg-white">
+                                <option value="" disabled selected>Select Source Account</option>
+                            </select>
+                            <p id="from-balance" class="text-xs text-gray-500 mt-2 ml-1 hidden">Available Balance: <span
+                                    class="font-medium text-gray-800"></span></p>
+                        </div>
+                    </div>
+
+                    <!-- Amount & Date -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-gray-100">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Amount</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                    <span class="text-gray-500 sm:text-lg">$</span>
+                                </div>
+                                <!-- Amount is number for normal behavior here, Defect 8 only required in Transfer -->
+                                <input type="number" step="0.01" id="amount" required placeholder="0.00"
+                                    class="input-base pl-8 text-lg font-medium bg-gray-50 focus:bg-white">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Payment Date</label>
+                            <input type="date" id="date" class="input-base bg-gray-50 focus:bg-white">
+                        </div>
+                    </div>
+
+                    <div class="pt-6 flex justify-end">
+                        <button type="submit" id="submit-btn"
+                            class="btn-primary w-full md:w-48 flex justify-center items-center py-3 px-6 border border-transparent rounded-xl shadow-md text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none transition-colors">
+                            <span>Pay Bill</span>
+                            <svg id="tx-spinner" class="animate-spin ml-2 h-4 w-4 text-white hidden"
+                                xmlns="http://www.w3.org/-2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                    stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor"
+                                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            if (!utils.checkAuth()) return;
+
+            document.getElementById('logout-btn').addEventListener('click', () => utils.logout());
+
+            // Установить дату по умолчанию на сегодня.
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('date').value = today;
+
+            const fromSelect = document.getElementById('from-account');
+            const fromBalance = document.getElementById('from-balance');
+            const balanceSpan = fromBalance.querySelector('span');
+
+            let accountsData = [];
+
+            try {
+                const res = await api.getAccounts();
+                if (res.ok) {
+                    accountsData = await res.json();
+                    accountsData.forEach(acc => {
+                        const label = `${acc.type} (...${String(acc.id).slice(-4)})`;
+                        fromSelect.add(new Option(label, acc.id));
+                    });
+                }
+            } catch (e) {
+                console.error(e);
+            }
+
+            fromSelect.addEventListener('change', () => {
+                const acc = accountsData.find(a => a.id == fromSelect.value);
+                if (acc) {
+                    balanceSpan.textContent = utils.formatCurrency(acc.balance);
+                    balanceSpan.className = acc.balance < 0 ? 'font-medium text-red-600' : 'font-medium text-green-600';
+                    fromBalance.classList.remove('hidden');
+                }
+            });
+
+            const form = document.getElementById('billpay-form');
+            const submitBtn = document.getElementById('submit-btn');
+            const spinner = document.getElementById('tx-spinner');
+            const btnText = submitBtn.querySelector('span');
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                const payeeId = document.getElementById('payee').value;
+                const fromAccountId = document.getElementById('from-account').value;
+                const amount = document.getElementById('amount').value;
+                const date = document.getElementById('date').value;
+
+                if (!payeeId || !fromAccountId || !amount) {
+                    utils.showToast('Please fill all fields', 'error');
+                    return;
+                }
+
+                submitBtn.disabled = true;
+                btnText.textContent = 'Processing...';
+                spinner.classList.remove('hidden');
+
+                const data = {
+                    fromAccountId,
+                    payeeId,
+                    amount,
+                    date
+                };
+
+                try {
+                    const res = await api.billPay(data);
+                    const result = await res.json();
+
+                    if (res.ok) {
+                        utils.showToast('Bill paid successfully!', 'success');
+                        setTimeout(() => {
+                            window.location.href = 'dashboard.html';
+                        }, 1000);
+                    } else {
+                        utils.showToast(result.error || 'Payment failed', 'error');
+                        submitBtn.disabled = false;
+                        btnText.textContent = 'Pay Bill';
+                        spinner.classList.add('hidden');
+                    }
+                } catch (e) {
+                    utils.showToast('Network error processing payment', 'error');
+                    submitBtn.disabled = false;
+                    btnText.textContent = 'Pay Bill';
+                    spinner.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

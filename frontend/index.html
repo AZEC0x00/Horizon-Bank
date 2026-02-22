@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Horizon Bank</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-slate-50 min-h-screen flex items-center justify-center relative overflow-hidden">
+  
+  <!-- Decorative Background blobs -->
+  <div class="absolute top-0 left-0 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+  <div class="absolute top-0 right-0 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+  <div class="absolute -bottom-32 left-1/2 w-96 h-96 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+
+  <main class="w-full max-w-md p-6 relative z-10 fade-in">
+    <!-- Header -->
+    <div class="text-center mb-10">
+      <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-600 text-white mb-6 shadow-xl shadow-blue-500/30">
+        <svg xmlns="http://www.w3.org/-2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+      </div>
+      <h1 class="text-3xl font-bold text-gray-900 tracking-tight">Horizon Bank</h1>
+      <p class="text-gray-500 mt-2 font-medium">Banking Without Limits</p>
+    </div>
+
+    <!-- Login Card -->
+    <div class="bg-white/80 backdrop-blur-xl rounded-2xl shadow-2xl shadow-indigo-100/50 p-8 border border-white/50 relative">
+      <h2 class="text-xl font-semibold text-gray-800 mb-6 text-center">Secure Login</h2>
+      
+      <!-- Error Alert -->
+      <div id="error-alert" class="hidden mb-6 bg-red-50 text-red-600 px-4 py-3 rounded-xl border border-red-100 text-sm font-medium flex items-center">
+        <svg class="w-5 h-5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+        <span id="error-message">Invalid credentials</span>
+      </div>
+
+      <form id="login-form" class="space-y-5">
+        <div>
+          <label for="username" class="block text-sm font-medium text-gray-700 mb-1">Username</label>
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <svg class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+            </div>
+            <input type="text" id="username" name="username" required 
+              class="block w-full pl-10 pr-3 py-3 border border-gray-200 rounded-xl leading-5 bg-white/50 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition-all focus:bg-white" 
+              placeholder="e.g. standard_user">
+          </div>
+        </div>
+
+        <div>
+          <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <svg class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            </div>
+            <input type="password" id="password" name="password" required 
+              class="block w-full pl-10 pr-3 py-3 border border-gray-200 rounded-xl leading-5 bg-white/50 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition-all focus:bg-white" 
+              placeholder="••••••••">
+          </div>
+          <div class="mt-2 text-right">
+            <button type="button" onclick="alert('Contact support at 1-800-HORIZON')" class="text-sm font-medium text-blue-600 hover:text-blue-500 hover:underline transition-colors">Forgot password?</button>
+          </div>
+        </div>
+
+        <button type="submit" id="login-btn" 
+          class="btn-primary w-full flex justify-center py-3.5 px-4 border border-transparent rounded-xl shadow-sm tracking-wide text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+          <span>Sign In</span>
+          <svg id="login-spinner" class="animate-spin ml-2 h-5 w-5 text-white hidden" xmlns="http://www.w3.org/-2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+        </button>
+      </form>
+      
+      <div class="mt-8 pt-6 border-t border-gray-100">
+        <button type="button" onclick="alert('Registration form goes here for demo purposes.')" class="w-full text-center text-sm text-gray-600 hover:text-gray-900 font-medium hover:underline transition-colors">
+          Don't have an account? Register now
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Если вы уже авторизованы, вас перенаправит на панель управления.
+      if (localStorage.getItem('token')) {
+        window.location.href = 'dashboard.html';
+      }
+
+      const form = document.getElementById('login-form');
+      const errorAlert = document.getElementById('error-alert');
+      const errorMessage = document.getElementById('error-message');
+      const loginBtn = document.getElementById('login-btn');
+      const spinner = document.getElementById('login-spinner');
+      const btnText = loginBtn.querySelector('span');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const username = form.username.value;
+        const password = form.password.value;
+        
+        errorAlert.classList.add('hidden');
+        spinner.classList.remove('hidden');
+        btnText.textContent = 'Signing in...';
+        loginBtn.disabled = true;
+
+        try {
+          const res = await api.login(username, password);
+          const data = await res.json();
+
+          if (res.ok) {
+            localStorage.setItem('token', data.token);
+            localStorage.setItem('user', JSON.stringify(data.user));
+            
+            // Defect 10 partly simulated: we might leave transactions if not cleared on logout
+            
+            window.location.href = 'dashboard.html';
+          } else {
+            // Defect 1: locked_out_user displays "Invalid credentials"
+            // The API returns this exactly, so we just display it
+            errorMessage.textContent = data.error || 'Login failed';
+            errorAlert.classList.remove('hidden');
+          }
+        } catch (err) {
+          errorMessage.textContent = 'Network error. Make sure backend is running.';
+          errorAlert.classList.remove('hidden');
+        } finally {
+          spinner.classList.add('hidden');
+          btnText.textContent = 'Sign In';
+          loginBtn.disabled = false;
+        }
+      });
+    });
+  </script>
+</body>
+</html>

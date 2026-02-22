@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Details | Horizon Bank</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-gray-50 min-h-screen font-sans">
+
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <!-- Navbar reused from dashboard -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center cursor-pointer"
+                        onclick="window.location.href='dashboard.html'">
+                        <div
+                            class="w-8 h-8 rounded-lg bg-gradient-to-tr from-blue-600 to-indigo-600 text-white flex items-center justify-center mr-2 shadow-md">
+                            <span class="font-bold text-lg">H</span>
+                        </div>
+                        <span class="font-bold text-xl text-gray-900 tracking-tight">Horizon Bank</span>
+                    </div>
+                    <div class="hidden sm:ml-8 sm:flex sm:space-x-8">
+                        <a href="dashboard.html"
+                            class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors">Dashboard</a>
+                        <a href="account.html"
+                            class="border-blue-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Accounts</a>
+                        <a href="transfer.html"
+                            class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors">Transfer</a>
+                        <a href="billpay.html"
+                            class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors">Bill
+                            Pay</a>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <button id="logout-btn"
+                        class="text-gray-500 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center">
+                        Logout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 fade-in">
+        <div class="mb-8 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+            <div>
+                <h1 class="text-3xl font-bold text-gray-900">Account Details</h1>
+                <p class="text-sm text-gray-500 mt-1">View and filter your transactions</p>
+            </div>
+            <div class="mt-4 sm:mt-0">
+                <select id="account-select" class="input-base w-full sm:w-64">
+                    <option value="">Select an account...</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm mb-6 flex flex-wrap gap-4 items-end">
+            <div class="w-full sm:w-auto flex-1">
+                <label class="block text-xs font-medium text-gray-500 mb-1">Type Filter</label>
+                <select id="filter-type" class="input-base py-2 text-sm">
+                    <option value="all">All Transactions</option>
+                    <option value="deposits">Deposits / Credits</option>
+                    <option value="withdrawals">Withdrawals / Debits</option>
+                </select>
+            </div>
+            <div class="w-full sm:w-auto flex-1">
+                <label class="block text-xs font-medium text-gray-500 mb-1">Start Date</label>
+                <input type="date" id="filter-start" class="input-base py-2 text-sm">
+            </div>
+            <div class="w-full sm:w-auto flex-1">
+                <label class="block text-xs font-medium text-gray-500 mb-1">End Date</label>
+                <input type="date" id="filter-end" class="input-base py-2 text-sm">
+            </div>
+            <div class="w-full sm:w-auto">
+                <button id="apply-filters"
+                    class="btn-primary w-full bg-blue-600 text-white rounded-lg px-6 py-2 text-sm font-medium hover:bg-blue-700">Apply
+                    Filters</button>
+            </div>
+        </div>
+
+        <!-- Account Details Summary -->
+        <div id="account-summary"
+            class="hidden mb-6 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-6 text-white shadow-lg">
+            <div class="flex justify-between items-center">
+                <div>
+                    <p class="text-blue-100 text-sm font-medium" id="summary-type">Account Type</p>
+                    <p class="text-3xl font-bold mt-1" id="summary-balance">$0.00</p>
+                </div>
+                <div class="text-right">
+                    <p class="text-blue-100 text-sm font-medium">Account Number</p>
+                    <p class="text-lg font-mono tracking-wider mt-1" id="summary-id">----</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Transactions Table -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Date</th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Description</th>
+                            <th scope="col"
+                                class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Amount</th>
+                            <th scope="col"
+                                class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transactions-body" class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td colspan="4" class="px-6 py-8 text-center text-sm text-gray-500">Please select an
+                                account.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            if (!utils.checkAuth()) return;
+
+            document.getElementById('logout-btn').addEventListener('click', () => utils.logout());
+
+            const accountSelect = document.getElementById('account-select');
+            const txBody = document.getElementById('transactions-body');
+            let allTransactions = [];
+            let currentAccount = null;
+
+            try {
+                const res = await api.getAccounts();
+                if (res.ok) {
+                    const accounts = await res.json();
+                    accounts.forEach(acc => {
+                        const option = document.createElement('option');
+                        option.value = acc.id;
+                        option.textContent = `${acc.type} (...${String(acc.id).slice(-4)})`;
+                        option.dataset.balance = acc.balance;
+                        option.dataset.type = acc.type;
+                        accountSelect.appendChild(option);
+                    });
+
+                    // Check URL for preselected account
+                    const params = new URLSearchParams(window.location.search);
+                    const urlAccId = params.get('id');
+                    if (urlAccId) {
+                        accountSelect.value = urlAccId;
+                        loadTransactions(urlAccId, accounts.find(a => a.id == urlAccId));
+                    }
+                }
+            } catch (e) {
+                console.error(e);
+            }
+
+            accountSelect.addEventListener('change', (e) => {
+                const accId = e.target.value;
+                if (!accId) {
+                    document.getElementById('account-summary').classList.add('hidden');
+                    txBody.innerHTML = '<tr><td colspan="4" class="px-6 py-8 text-center text-sm text-gray-500">Please select an account.</td></tr>';
+                    return;
+                }
+                const option = e.target.selectedOptions[0];
+                const acc = { id: accId, type: option.dataset.type, balance: Number(option.dataset.balance) };
+                loadTransactions(accId, acc);
+            });
+
+            async function loadTransactions(accountId, account) {
+                document.getElementById('summary-type').textContent = account.type;
+                document.getElementById('summary-balance').textContent = utils.formatCurrency(account.balance);
+                document.getElementById('summary-id').textContent = account.id;
+                document.getElementById('account-summary').classList.remove('hidden');
+
+                txBody.innerHTML = '<tr><td colspan="4" class="px-6 py-4 text-center text-sm text-gray-500">Loading...</td></tr>';
+
+                try {
+                    const res = await api.getTransactions(); // мы получаем все данные для пользователя
+                    if (res.ok) {
+                        const data = await res.json();
+                        allTransactions = data.filter(tx => tx.accountId == accountId);
+                        allTransactions.sort((a, b) => b.id - a.id);
+                        renderTransactions(allTransactions);
+                    }
+                } catch (e) {
+                    txBody.innerHTML = '<tr><td colspan="4" class="px-6 py-4 text-center text-sm text-red-500">Failed to load transactions</td></tr>';
+                }
+            }
+
+            document.getElementById('apply-filters').addEventListener('click', () => {
+                const type = document.getElementById('filter-type').value;
+                const start = document.getElementById('filter-start').value;
+                const end = document.getElementById('filter-end').value;
+
+                let filtered = [...allTransactions];
+
+                if (type === 'deposits') filtered = filtered.filter(tx => tx.amount > 0);
+                else if (type === 'withdrawals') filtered = filtered.filter(tx => tx.amount < 0);
+
+                if (start || end) {
+                    filtered = filtered.filter(tx => {
+                        // Ошибка 9: Фильтр по дате игнорирует год.
+                        // При фильтрации сравниваются только месяц и день.
+                        const txDate = new Date(tx.date);
+                        const txMD = txDate.getMonth() * 100 + txDate.getDate(); // e.g. Oct 5 = 905
+
+                        let inRange = true;
+                        if (start) {
+                            const startDate = new Date(start);
+                            const startMD = startDate.getMonth() * 100 + startDate.getDate();
+                            if (txMD < startMD) inRange = false;
+                        }
+                        if (end) {
+                            const endDate = new Date(end);
+                            const endMD = endDate.getMonth() * 100 + endDate.getDate();
+                            if (txMD > endMD) inRange = false;
+                        }
+                        return inRange;
+                    });
+                }
+
+                renderTransactions(filtered);
+            });
+
+            function renderTransactions(transactions) {
+                txBody.innerHTML = '';
+                if (transactions.length === 0) {
+                    txBody.innerHTML = '<tr><td colspan="4" class="px-6 py-8 text-center text-sm text-gray-500">No transactions found matching criteria.</td></tr>';
+                    return;
+                }
+
+                transactions.forEach(tx => {
+                    const color = tx.amount > 0 ? 'text-green-600 font-medium' : 'text-gray-900';
+                    const prefix = tx.amount > 0 ? '+' : '';
+                    txBody.innerHTML += `
+            <tr class="hover:bg-gray-50 transition-colors">
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${utils.formatDate(tx.date)}</td>
+              <td class="px-6 py-4 text-sm text-gray-900 font-medium">${tx.description}</td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-right ${color}">${prefix}${utils.formatCurrency(tx.amount)}</td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-500">${utils.formatCurrency(tx.balanceAfter)}</td>
+            </tr>
+          `;
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
